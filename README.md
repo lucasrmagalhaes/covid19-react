@@ -123,3 +123,59 @@ function App() {
 
 export default App;
 
+Possível utilizar JS no CSS
+global-style.js - adicionando algumas classes:
+
+    .mb-2 {
+        margin-bottom: 16px;
+    }
+
+    .pt-2 {
+        padding-top: 16px;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
+
+App.js - Adicionar o Main - Página principal:
+5 import Main from './containers/Main'
+12 <Main />
+
+Dentro de containers criar a pasta: Main
+Dentro de Main criar o arquivo index.jsx -> jsx para facilitar porque o arquivo é React.
+memo evita criar renderização desnecessária na página.
+
+index.jsx - código:
+
+import React, { memo } from 'react'
+
+function Main() {
+
+    return (
+        <div>
+            Teste
+        </div>
+    )
+}
+
+export default memo(Main)
+
+Criar o arquivo: api.js em src:
+
+const path = 'https://coronavirus-19-api.herokuapp.com/countries' // api
+
+const headers = {
+    method: 'get',
+    mode: 'cors',
+    cache: 'default'
+}
+
+function getCountry(country) {
+    return fetch(`${path}/${country}}`, headers) // fetch é mais simples mas não é recomendado por questão de segurança
+        .then((response) => response.json()) // retorna o dado/país
+}
+
+export default {
+    getCountry
+}
