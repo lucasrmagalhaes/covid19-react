@@ -26,6 +26,18 @@ const globalStyle = createGlobalStyle`
         background-size: cover;
         background-position: center center;
     }
+
+    .mb-2 {
+        margin-bottom: 16px;
+    }
+
+    .pt-2 {
+        padding-top: 16px;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
     `
 
     export default globalStyle
