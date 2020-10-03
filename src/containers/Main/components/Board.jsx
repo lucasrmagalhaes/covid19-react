@@ -3,7 +3,7 @@ import PropTypes from 'pro-types'
 import { Grid, Skeleton } from '../../../components'
 import Card from './Card'
 
-function Board ({ data }) { // Cards sobre o Covid-19 irão ficar aqui
+function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
     
     // Dados que a API retorna
     const { cases, todayDeaths, recovered, deaths, todayCases } = data 
@@ -23,8 +23,4 @@ function Board ({ data }) { // Cards sobre o Covid-19 irão ficar aqui
     )
 }
 
-
-
-
-
-
+export default Board
