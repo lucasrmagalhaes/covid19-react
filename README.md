@@ -179,3 +179,5 @@ function getCountry(country) {
 export default {
     getCountry
 }
+
+próximo vídeo é o 4: https://web.digitalinnovation.one/lab/desenvolvendo-uma-progressive-web-application-com-react-para-mapear-os-dados-do-covid19-pelo-mundo/learning/c21134af-7629-457d-a4a7-3dffb12d781a
