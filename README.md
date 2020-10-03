@@ -180,4 +180,155 @@ export default {
     getCountry
 }
 
-próximo vídeo é o 4: https://web.digitalinnovation.one/lab/desenvolvendo-uma-progressive-web-application-com-react-para-mapear-os-dados-do-covid19-pelo-mundo/learning/c21134af-7629-457d-a4a7-3dffb12d781a
+index.jsx - importar o API
+import Api from '../../api'
+
+useState -> Para poder manipular variável.
+
+index.jsx - código:
+
+import React, { memo, useState, useCallback, useEffect } from 'react'
+import Api from '../../api'
+
+function Main() {
+  const [data, setData] = useState({})
+  const [country, setCountry] = useState('brazil')
+
+  const getCovidData = useCallback((country) => {
+    Api.getCountry(country)
+      .then(data => setData(data))
+  }, [])
+
+  useEffect(() => {    
+    getCovidData(country)
+  }, [getCovidData, country])
+
+  return (
+    <div>
+        Teste
+    </div>
+  )
+}
+
+export default memo(Main)
+
+Criar o arquivo styled.js - Dentro de Main.
+
+Criar a pasta components em src.
+
+Criar o arquivo Button.jsx dentro dela:
+import Button from '@material-ui/core/Button'
+
+export default Button
+
+Criar o arquivo Card.jsx dentro de components:
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+
+export {
+    Card,
+    CardContent
+}
+
+Criar o arquivo Grid.jsx dentro de components:
+import Grid from '@material-ui/core/Grid'
+
+export default Grid
+
+Criar o arquivo MenuItem.jsx dentro de components:
+import MenuItem from '@material-ui/core/MenuItem'
+
+export default MenuItem
+
+Criar o arquivo Select.jsx dentro de components:
+import Select from '@material-ui/core/Select'
+
+export default Select
+
+Criar o arquivo Skeleton.jsx dentro de components:
+import Skeleton from '@material-ui/lab/Skeleton'
+
+export default Skeleton
+
+Criar o arquivo Typography.jsx dentro de components:
+import Typography from '@material-ui/core/Typography'
+
+export default Typography
+
+Criar o arquivo index.js dentro de components:
+import { Card, CardContent } from './Card'
+import Button from './Button'
+import Grid from './Grid'
+import Typography from './Typography'
+import Skeleton from './Skeleton'
+import Select from './Select'
+import MenuItem from './MenuItem'
+
+export {
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Typography,
+  Skeleton,
+  Select,
+  MenuItem
+}
+
+diretório componentes é para facilitar as importações, evitando gastar 10 linhas em cada componente importando.
+
+Dentro de Main criar a pasta components.
+
+Dentro de Main/componentes criar o arquivo Board.jsx
+import React, { memo } from 'react'
+import PropTypes from 'pro-types'
+import { Grid, Skeleton } from '../../../components'
+import Card from './Card'
+
+function Board ({ data }) { // Cards sobre o Covid-19 irão ficar aqui
+    
+    // Dados que a API retorna
+    const { cases, todayDeaths, recovered, deaths, todayCases } = data 
+
+/* 
+ * Função para retornar o valor ou uma barra cinza
+ * Skeleton - melhorar a interface de loading
+ */
+    const getValue = (value) => value ? value : <Skeleton variant="text" width={182} height={60} />
+
+    return (
+        <Grid container spacing={4}>
+            <Grid item xs={12} md={3}>
+                <Card value={getValue(cases)} label="Total de Casos" color="#5d78ff" />
+            </Grid>
+        </Grid>
+    )
+}
+
+Dentro de Main/componentes criar o arquivo Card.jsx
+// Card para receber os dados
+
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
+import { Card as CardUI } from '../../../components'
+import {
+    LabelStyled,
+    ValueStyled,
+    CardContentStyled
+} from './style'
+
+function Card({ value, label, color }) {
+    return (
+        <CardUI>
+            <CardContentStyled color={color}>
+                <ValueStyled>{value}</ValueStyled>
+                <LabelStyled>{label}</LabelStyled>
+            </CardContentStyled>
+        </CardUI>
+    )
+}
+
+export default memo (Card)
+
+Dentro de Main/componentes criar o arquivo style.js
+
