@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "baseUrl": "src",
+        "jsx": "react",
+        "paths": {
+            "components:/*": [
+                "./components/*"
+            ],
+
+            "containers:/*": [
+                "./containers/*"
+            ],
+
+            "assets:/*": [
+                "./assets/*"
+            ],
+
+            "commons:/*": [
+                "./commons/*"
+            ]
+        } 
+    }
+}
