@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import PropTypes from 'pro-types'
+import PropTypes from 'prop-types'
 import { Grid, Skeleton } from '../../../components'
 import Card from './Card'
 
@@ -23,4 +23,4 @@ function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
     )
 }
 
-export default Board
+export default memo(Board)
