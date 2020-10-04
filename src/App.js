@@ -10,9 +10,6 @@ function App() {
       <CssBaseline />
       <GlobalStyle />
       <Main />
-      <div>
-        Teste
-      </div>
     </StylesProvider>
   );
 }
