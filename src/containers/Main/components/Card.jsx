@@ -20,4 +20,4 @@ function Card({ value, label, color }) {
     )
 }
 
-export default memo (Card)
+export default memo(Card)
