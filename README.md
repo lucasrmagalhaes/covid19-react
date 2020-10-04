@@ -1,4 +1,6 @@
-# covid19-js
+# COVID-19 PWA
+
+[![](imigur)](https://imgur.com/yvFpjJh)
 
 npx - Gerenciador de pacotes.
 create-react-app - Cria uma aplicação inicial que facilita o desenvolvimento.
