@@ -7,7 +7,7 @@ import { CardPanelContentStyled, ItemStyled } from './style'
 const navigatorHasShare = navigator.share
 
 // alguns valores e parametros que o arquivo main vai enviar
-function Panel({ updateAt, onChange, data, country, getCoviddata }) {
+function Panel({ updateAt, onChange, data, country, getCovidData }) {
     const { cases, recovered, deaths, todayCases, todayDeaths } = data
 
     const renderCountries = (country, index) => (
@@ -35,7 +35,7 @@ function Panel({ updateAt, onChange, data, country, getCoviddata }) {
         navigator.share({
             title: `Dados do Covid-19 - ${country}`,
             text: textCovid19,
-            url: 'https://covid19dio.netlify.app/' // onde a aplicação está hospedada
+            url: 'https://covid19-pwa.netlify.app/' // onde a aplicação está hospedada
         })
     }
 

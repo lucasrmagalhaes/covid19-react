@@ -1,7 +1,7 @@
 // Diretório componentes é para facilitar as importações, evitando gastar 10 linhas em cada componente importando.
 
 import { Card, CardContent } from './Card'
-import Button from './Button' // Button
+import Button from './Button'
 import Grid from './Grid'
 import Typography from './Typography'
 import Skeleton from './Skeleton'
