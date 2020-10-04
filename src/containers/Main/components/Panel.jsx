@@ -19,6 +19,43 @@ function Panel({ updateAt, onChange, data, country, getCoviddata }) {
         </MenuItem>
     )
 
+    const textCovid19 = `País: ${country}, Total de Casos: ${cases}, Óbitos de Hoje: ${todayDeaths}, 
+    Casos de Hoje: ${todayCases}, Total de Mortes: ${deaths}, Recuperados: ${recovered}.`
+    
+    // Documentações mais completas de JS é na Mozilla
+    const copyInfo = () => {
+        navigator.clipboard.writeText(textCovid19)
+    }   
+
+    /* 
+     * Navegadores que tiverem essa API/suporte
+     * title, text e url - valores padrões da API
+     */
+    const shareInfo = () => {
+        navigator.share({
+            title: `Dados do Covid-19 - ${country}`,
+            text: textCovid19,
+            url: 'https://covid19dio.netlify.app/' // onde a aplicação está hospedada
+        })
+    }
+
+    // Adicionando os métodos. Celular compartilha por Whatsapp e Web permite copiar.
+    const renderShareButton = (
+        <div>
+            <Button variant="contained" color="primary" onClick={shareInfo}>
+                Compartilhar
+            </Button>
+        </div>
+    )
+    
+    const renderCopyButton = (
+        <div>
+        <Button variant="contained" color="primary" onClick={copyInfo}>
+            Copiar
+        </Button>
+    </div>
+    )
+
     return (
         <Card>
             <CardPanelContentStyled>
@@ -32,6 +69,7 @@ function Panel({ updateAt, onChange, data, country, getCoviddata }) {
                         </Select>
                     </div>
                 </div>
+                {navigatorHasShare ? renderShareButton : renderCopyButton}
             </CardPanelContentStyled>
         </Card>
     )
