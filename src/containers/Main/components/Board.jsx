@@ -19,6 +19,18 @@ function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
             <Grid item xs={12} md={3}>
                 <Card value={getValue(cases)} label="Total de Casos" color="#5d78ff" />
             </Grid>
+            <Grid item xs={12} md={3}>
+                <Card value={getValue(todayDeaths)} label="Óbitos de Hoje" color="#F78829" />
+            </Grid>
+            <Grid item xs={12} md={3}>
+                <Card value={getValue(todayCases)} label="Casos de Hoje" color="#000" />
+            </Grid>
+            <Grid item xs={12} md={3}>
+                <Card value={getValue(deaths)} label="Total de Mortes" color="#E95078" />
+            </Grid>
+            <Grid item xs={12} md={3}>
+                <Card value={getValue(recovered)} label="Total de Recuperados" color="#67C887" />
+            </Grid>
         </Grid>
     )
 }
