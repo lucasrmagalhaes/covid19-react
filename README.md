@@ -331,4 +331,3 @@ function Card({ value, label, color }) {
 export default memo (Card)
 
 Dentro de Main/componentes criar o arquivo style.js
-
