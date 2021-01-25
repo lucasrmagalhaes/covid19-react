@@ -15,21 +15,21 @@ function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
     const getValue = (value) => value ? value : <Skeleton variant="text" width={182} height={60} />
 
     return (
-        <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
+        <Grid container spacing={1}>
+            <Grid item xs={12} md={12}>
                 <Card value={getValue(cases)} label="TOTAL DE CASOS" color="#000" />
             </Grid>
-            <Grid item xs={12} md={4}>
-                <Card value={getValue(todayDeaths)} label="ÓBITOS DE HOJE" color="#FF0000" />
-            </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
                 <Card value={getValue(todayCases)} label="CASOS DE HOJE" color="#000" />
             </Grid>
-            <Grid item xs={12} md={4}>
-                <Card value={getValue(deaths)} label="TOTAL DE MORTES" color="#FF0000" />
+            <Grid item xs={12} md={6}>
+                <Card value={getValue(todayDeaths)} label="ÓBITOS DE HOJE" color="#FF0000" />
             </Grid>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={6}>
                 <Card value={getValue(recovered)} label="TOTAL DE RECUPERADOS" color="#008000" />
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Card value={getValue(deaths)} label="TOTAL DE MORTES" color="#FF0000" />
             </Grid>
         </Grid>
     )
