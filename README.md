@@ -10,3 +10,6 @@
   <br />
   Progressive Web Application com React para mapear os dados do COVID-19 pelo mundo.
 </p>
+
+<hr />
+
