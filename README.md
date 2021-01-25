@@ -21,7 +21,7 @@
 
 <hr />
 
-<p align="left"><strong>Dependências</strong></p>
+<p align="left"><strong>Dependências:</strong></p>
 <pre>npm i styled-components</pre>
 <pre>npm i @material-ui/core</pre>
 <pre>npm i @material-ui/lab</pre>
