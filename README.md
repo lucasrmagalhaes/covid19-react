@@ -31,7 +31,7 @@
 <hr />
 
 <p align="left">
-  </strong>Anotações:</strong> <br />
+  <strong>Anotações:</strong> <br />
   Skeleton - Melhora a interface de loading. <br />
   useState - Manipula variáveis. <br />
 </p>
