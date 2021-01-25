@@ -13,3 +13,10 @@
 
 <hr />
 
+<p align="left">Dependências</p>
+
+<pre>npm i styled-components</pre>
+<pre>npm i @material-ui/core</pre>
+<pre>npm i @material-ui/lab</pre>
+<pre>npm i --save-dev customize-cra</pre>
+<pre>npm i --save-dev react-app-rewired</pre>

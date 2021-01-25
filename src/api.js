@@ -1,4 +1,4 @@
-const path = 'https://coronavirus-19-api.herokuapp.com/countries' // api
+const path = 'https://coronavirus-19-api.herokuapp.com/countries' // API
 
 const headers = {
     method: 'get',
