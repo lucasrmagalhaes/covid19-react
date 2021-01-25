@@ -8,7 +8,7 @@ const globalStyle = createGlobalStyle`
     }
 
     body {
-        line-height: normal;
+        line-height: 1.6;
     }
 
     html, body {

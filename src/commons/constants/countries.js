@@ -7,7 +7,11 @@ import CanadaFlag from '../../assets/images/canada.png'
 import ChinaFlag from '../../assets/images/china.png'
 import UsaFlag from '../../assets/images/usa.png'
 import FranceFlag from '../../assets/images/france.png'
+import EnglandFlag from '../../assets/images/england.png'
 import ItalyFlag from '../../assets/images/italy.png'
+import JapanFlag from '../../assets/images/japan.png'
+import SenegalFlag from '../../assets/images/senegal.png'
+import PortugalFlag from '../../assets/images/portugal.png'
 import WorldFlag from '../../assets/images/world.png'
  
 // Array com os países: Nome, valor API e foto(bandeira).
@@ -58,9 +62,29 @@ const COUNTRIES = [
         flag: FranceFlag
     },
     {
+        label: 'Inglaterra',
+        value: 'England',
+        flag: EnglandFlag
+    },
+    {
         label: 'Itália',
         value: 'Italy',
         flag: ItalyFlag
+    },
+    {
+        label: 'Japão',
+        value: 'Japan',
+        flag: JapanFlag
+    },
+    {
+        label: 'Senegal',
+        value: 'Senegal',
+        flag: SenegalFlag
+    },
+    {
+        label: 'Portugal',
+        value: 'Portugal',
+        flag: PortugalFlag
     },
     {
     label: 'Mundo',
