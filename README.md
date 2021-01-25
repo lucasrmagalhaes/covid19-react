@@ -13,7 +13,7 @@
 
 <hr />
 
-<p align="left"><a href="https://coronavirus-19-api.herokuapp.com/countries">API</p>
+<p align="left"><a href="https://coronavirus-19-api.herokuapp.com/countries">API</a></p>
 
 <hr />
 
