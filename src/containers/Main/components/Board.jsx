@@ -9,27 +9,27 @@ function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
     const { cases, todayDeaths, recovered, deaths, todayCases } = data 
 
 /* 
- * Função para retornar o valor ou uma barra cinza
- * Skeleton - melhorar a interface de loading
+ * Função para retornar o valor ou uma barra cinza.
+ * Skeleton - Melhora a interface de loading.
  */
     const getValue = (value) => value ? value : <Skeleton variant="text" width={182} height={60} />
 
     return (
         <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
-                <Card value={getValue(cases)} label="Total de Casos" color="#5d78ff" />
+            <Grid item xs={12} md={4}>
+                <Card value={getValue(cases)} label="TOTAL DE CASOS" color="#000" />
             </Grid>
-            <Grid item xs={12} md={3}>
-                <Card value={getValue(todayDeaths)} label="Óbitos de Hoje" color="#F78829" />
+            <Grid item xs={12} md={4}>
+                <Card value={getValue(todayDeaths)} label="ÓBITOS DE HOJE" color="#FF0000" />
             </Grid>
-            <Grid item xs={12} md={3}>
-                <Card value={getValue(todayCases)} label="Casos de Hoje" color="#000" />
+            <Grid item xs={12} md={4}>
+                <Card value={getValue(todayCases)} label="CASOS DE HOJE" color="#000" />
             </Grid>
-            <Grid item xs={12} md={3}>
-                <Card value={getValue(deaths)} label="Total de Mortes" color="#E95078" />
+            <Grid item xs={12} md={4}>
+                <Card value={getValue(deaths)} label="TOTAL DE MORTES" color="#FF0000" />
             </Grid>
-            <Grid item xs={12} md={3}>
-                <Card value={getValue(recovered)} label="Total de Recuperados" color="#67C887" />
+            <Grid item xs={12} md={5}>
+                <Card value={getValue(recovered)} label="TOTAL DE RECUPERADOS" color="#008000" />
             </Grid>
         </Grid>
     )

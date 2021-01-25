@@ -24,3 +24,10 @@
 <pre>npm i @material-ui/lab</pre>
 <pre>npm i --save-dev customize-cra</pre>
 <pre>npm i --save-dev react-app-rewired</pre>
+
+<p align="left">
+  Anotações: <br />
+  <br />
+  Skeleton - Melhora a interface de loading. <br />
+  useState - Manipula variáveis. <br />
+</p>
