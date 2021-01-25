@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import CovidImg from '../../assets/images/covid.jpeg'
+import CovidImg from '../../assets/images/covid19.jpg'
 
 const globalStyle = createGlobalStyle`
     * {

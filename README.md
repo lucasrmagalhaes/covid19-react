@@ -13,6 +13,10 @@
 
 <hr />
 
+<p align="left"><a href="https://coronavirus-19-api.herokuapp.com/countries">API</p>
+
+<hr />
+
 <p align="left">Dependências</p>
 
 <pre>npm i styled-components</pre>
