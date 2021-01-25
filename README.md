@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://covid19-pwa.netlify.app/" target="_blank">
     <img 
-         src="https://i.imgur.com/5dkiaY2.jpg" 
+         src="https://github.com/lucasrmagalhaes/covid19-pwa/blob/main/src/assets/images/prototipo.jpg" 
          alt="COVID-19 PWA" 
     />
   </a>
