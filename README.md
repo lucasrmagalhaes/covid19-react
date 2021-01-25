@@ -14,23 +14,24 @@
 <hr />
 
 <p align="left">
+  <strong>Fontes:</strong> <br />
   <a href="https://coronavirus-19-api.herokuapp.com/countries">API</a> <br />
   <a href="https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design">Flag Icons</a>
 </p>
 
 <hr />
 
-<p align="left">Dependências</p>
-
+<p align="left"><strong>Dependências</strong></p>
 <pre>npm i styled-components</pre>
 <pre>npm i @material-ui/core</pre>
 <pre>npm i @material-ui/lab</pre>
 <pre>npm i --save-dev customize-cra</pre>
 <pre>npm i --save-dev react-app-rewired</pre>
 
+<hr />
+
 <p align="left">
-  Anotações: <br />
-  <br />
+  </strong>Anotações:</strong> <br />
   Skeleton - Melhora a interface de loading. <br />
   useState - Manipula variáveis. <br />
 </p>
