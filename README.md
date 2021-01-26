@@ -15,6 +15,7 @@
 
 <p align="left">
   <strong>Fontes:</strong> <br />
+  <a href="https://github.com/Tautorn/covid19-pwa>Projeto Original</a> <br />
   <a href="https://coronavirus-19-api.herokuapp.com/countries">API</a> <br />
   <a href="https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design">Flag Icons</a>
 </p>
