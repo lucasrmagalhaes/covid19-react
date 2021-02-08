@@ -13,26 +13,46 @@
 
 <hr />
 
-<p align="left">
-  <strong>Fontes:</strong> <br />
-  <a href="https://github.com/Tautorn/covid19-pwa">Projeto Original</a> <br />
-  <a href="https://coronavirus-19-api.herokuapp.com/countries">API</a> <br />
-  <a href="https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design">Flag Icons</a>
-</p>
+<details>
+  <summary><strong>Fontes</strong></summary>
+  
+  <br />
+  
+  <p align="left">
+    <a href="https://github.com/Tautorn/covid19-pwa">Projeto Original</a> <br />
+    <a href="https://coronavirus-19-api.herokuapp.com/countries">API</a> <br />
+    <a href="https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design">Flag Icons</a>
+  </p>
+  
+</details>
 
 <hr />
 
-<p align="left"><strong>Dependências:</strong></p>
-<pre>npm i styled-components</pre>
-<pre>npm i @material-ui/core</pre>
-<pre>npm i @material-ui/lab</pre>
-<pre>npm i --save-dev customize-cra</pre>
-<pre>npm i --save-dev react-app-rewired</pre>
+<details>
+  
+  <summary><strong>Dependências</strong></summary>
+  
+  <br />
+
+  <pre>npm i styled-components</pre>
+  <pre>npm i @material-ui/core</pre>
+  <pre>npm i @material-ui/lab</pre>
+  <pre>npm i --save-dev customize-cra</pre>
+  <pre>npm i --save-dev react-app-rewired</pre>
+
+</details>
 
 <hr />
 
-<p align="left">
-  <strong>Anotações:</strong> <br />
-  Skeleton - Melhora a interface de loading. <br />
-  useState - Manipula variáveis. <br />
-</p>
+<details>
+  
+  <summary><strong>Anotações:</strong></summary>
+  
+  <br />
+  
+  <p align="left">
+    Skeleton - Melhora a interface de loading. <br />
+    useState - Manipula variáveis. <br />
+  </p>
+  
+</details>
