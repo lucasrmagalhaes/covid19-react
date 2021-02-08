@@ -8,7 +8,7 @@
     />
   </a>
   <br />
-  Progressive Web Application com React para mapear os dados do COVID-19 pelo mundo.
+  <i>Progressive Web Application com React para mapear os dados do COVID-19 pelo mundo.</i>
 </p>
 
 <hr />
@@ -46,7 +46,7 @@
 
 <details>
   
-  <summary><strong>Anotações:</strong></summary>
+  <summary><strong>Anotações</strong></summary>
   
   <br />
   
