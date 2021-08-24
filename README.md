@@ -1,9 +1,9 @@
 <h1 align="center">COVID-19 :bar_chart:</h1>
 
 <p align="center">
-  <a href="https://covid19-pwa.netlify.app/" target="_blank">
+  <a href="https://covid19-pwa.netlify.app/">
     <img
-      src="https://github.com/lucasrmagalhaes/covid19-react/blob/main/public/COVID-19.gif?raw=true"
+      src="https://github.com/lucasrmagalhaes/covid19-react/blob/main/public/dio.gif?raw=true"
       alt="COVID-19 PWA" 
     />
   </a>
