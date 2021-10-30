@@ -12,9 +12,9 @@
   <a href="https://github.com/lucasrmagalhaes/covid19-react/stargazers">
     <img src="https://img.shields.io/github/stars/lucasrmagalhaes/covid19-react" /> 
   </a>
-    
+  
    <a href="https://github.com/lucasrmagalhaes/covid19-react/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/licenselucasrmagalhaes/covid19-react" /> 
+    <img src="https://img.shields.io/github/license/lucasrmagalhaes/covid19-react" /> 
   </a>
 </p>
 
