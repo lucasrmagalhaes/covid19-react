@@ -29,7 +29,7 @@
     <img src="https://img.shields.io/github/languages/code-size/lucasrmagalhaes/covid19-react?style=plastic" title="Code Size in Bytes" />
   </a>
     
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/commits/master">
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/commits/main">
     <img src="https://img.shields.io/github/last-commit/lucasrmagalhaes/covid19-react?style=plastic" title="Last Commit" />
   </a>
 </p>
