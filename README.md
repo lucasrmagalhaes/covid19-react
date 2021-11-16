@@ -1,20 +1,36 @@
 <h1 align="center">COVID-19 :bar_chart:</h1>
 
 <p align="center">
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/issues">
-    <img src="https://img.shields.io/github/issues/lucasrmagalhaes/covid19-react" /> 
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/issues?q=is%3Aopen+is%3Aissue">
+    <img src="https://img.shields.io/github/issues-raw/lucasrmagalhaes/covid19-react?style=plastic" title="Open Issues" /> 
   </a>
-    
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/network/members">
-    <img src="https://img.shields.io/github/forks/lucasrmagalhaes/covid19-react" /> 
+  
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/issues?q=is%3Aissue+is%3Aclosed">
+    <img src="https://img.shields.io/github/issues-closed-raw/lucasrmagalhaes/covid19-react?style=plastic" title="Closed Issues" /> 
   </a>
     
   <a href="https://github.com/lucasrmagalhaes/covid19-react/stargazers">
-    <img src="https://img.shields.io/github/stars/lucasrmagalhaes/covid19-react" /> 
+    <img src="https://img.shields.io/github/stars/lucasrmagalhaes/covid19-react?style=plastic" title="Stars" /> 
+  </a>
+    
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/lucasrmagalhaes/covid19-react?style=plastic" title="License" /> 
+  </a>
+ 
+  <a href="#">
+    <img src="https://img.shields.io/github/languages/count/lucasrmagalhaes/covid19-react?style=plastic" title="Language Count" />
   </a>
   
-   <a href="https://github.com/lucasrmagalhaes/covid19-react/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/lucasrmagalhaes/covid19-react" /> 
+  <a href="#">
+    <img src="https://img.shields.io/github/languages/top/lucasrmagalhaes/covid19-react?style=plastic" title="Top Language" />
+  </a>
+  
+  <a href="#">
+    <img src="https://img.shields.io/github/languages/code-size/lucasrmagalhaes/covid19-react?style=plastic" title="Code Size in Bytes" />
+  </a>
+    
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/commits/master">
+    <img src="https://img.shields.io/github/last-commit/lucasrmagalhaes/covid19-react?style=plastic" title="Last Commit" />
   </a>
 </p>
 
