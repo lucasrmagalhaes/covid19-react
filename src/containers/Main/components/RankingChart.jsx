@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import { Card, CardContent, Typography, Skeleton } from '@mui/material'
 import { BarChart } from '@mui/x-charts/BarChart'
 import { useI18n, regionName } from '../../../commons/i18n'
+import { formatNumber, formatCompact } from '../../../commons/utils/number'
 
 const TOP = 10
 
 function RankingChart({ countries, selected }) {
-    const { t, locale } = useI18n()
+    const { t, locale, intlLocale } = useI18n()
 
     const top = useMemo(() =>
         [...countries]
@@ -41,7 +42,12 @@ function RankingChart({ countries, selected }) {
                                 colors: top.map((item) => item.country === selected ? '#5d78ff' : '#90a4ae'),
                             },
                         }]}
-                        series={[{ data: top.map((item) => item.casesPerOneMillion), label: t('casesPerMillion') }]}
+                        xAxis={[{ valueFormatter: (value) => formatCompact(value, intlLocale) }]}
+                        series={[{
+                            data: top.map((item) => item.casesPerOneMillion),
+                            label: t('casesPerMillion'),
+                            valueFormatter: (value) => formatNumber(value, intlLocale),
+                        }]}
                     />
                 )}
             </CardContent>

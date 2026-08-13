@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatNumber, formatPercent } from './number'
+import { formatNumber, formatPercent, formatCompact } from './number'
 
 describe('formatNumber', () => {
     it('formata inteiros no locale pt-BR por padrão', () => {
@@ -26,5 +26,19 @@ describe('formatPercent', () => {
 
     it('retorna "0%" para undefined', () => {
         expect(formatPercent(undefined)).toBe('0%')
+    })
+})
+
+describe('formatCompact', () => {
+    it('compacta números grandes em en-US', () => {
+        expect(formatCompact(800000000, 'en-US')).toBe('800M')
+    })
+
+    it('compacta números grandes em pt-BR', () => {
+        expect(formatCompact(800000000, 'pt-BR')).toMatch(/mi/)
+    })
+
+    it('retorna "0" para undefined', () => {
+        expect(formatCompact(undefined)).toBe('0')
     })
 })
