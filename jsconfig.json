@@ -1,28 +1,17 @@
 {
     "compilerOptions": {
-        "target": "es2015",
+        "target": "es2022",
         "baseUrl": "src",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "paths": {
-            "components:/*": [
-                "./components/*"
-            ],
-
-            "containers:/*": [
-                "./containers/*"
-            ],
-
-            "assets:/*": [
-                "./assets/*"
-            ],
-
-            "commons:/*": [
-                "./commons/*"
-            ]
-        } 
+            "commons/*": ["commons/*"],
+            "components/*": ["components/*"],
+            "containers/*": ["containers/*"],
+            "assets/*": ["assets/*"]
+        }
     },
     "exclude": [
         "node_modules",
-        "build"
+        "dist"
     ]
 }

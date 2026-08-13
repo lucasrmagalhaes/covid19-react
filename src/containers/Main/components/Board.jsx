@@ -17,31 +17,31 @@ function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
     return (
         <Grid container spacing={1}>
             
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
                 <Card value={getValue(cases)} label="CASOS" color="#000" />
             </Grid>
 
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
                 <Card value={getValue(todayCases)} label="HOJE" color="#000" />
             </Grid>
 
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
                 <Card value={getValue(active)} label="ATIVO" color="#000" />
             </Grid>
             
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <Card value={getValue(deaths)} label="ÓBITOS" color="#FF0000" />
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <Card value={getValue(todayDeaths)} label="HOJE" color="#FF0000" />
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <Card value={getValue(recovered)} label="RECUPERADOS" color="#008000" />
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <Card value={getValue(critical)} label="CRÍTICO" color="#FF7F00" />
             </Grid>
         </Grid>

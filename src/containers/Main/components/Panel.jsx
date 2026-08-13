@@ -64,7 +64,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
                     <Typography variant="h6" component="span" color="primary">Visão Geral </Typography>
                     <Typography variant="body2" component="span" color="primary">Atualizado em: {updateAt}</Typography>
                     <div className="pt-2">
-                        <Select onChange={onChange} value={country}>
+                        <Select onChange={onChange} value={country} variant="standard">
                             {COUNTRIES.map(renderCountries)}
                         </Select>
                     </div>

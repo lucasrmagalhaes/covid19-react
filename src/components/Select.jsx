@@ -1,3 +1,3 @@
-import Select from '@material-ui/core/Select'
+import Select from '@mui/material/Select'
 
 export default Select

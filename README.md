@@ -54,7 +54,7 @@
   
   <p align="left">
     <a href="https://github.com/Tautorn/covid19-pwa">Projeto Original</a> <br />
-    <a href="https://coronavirus-19-api.herokuapp.com/countries">API</a> <br />
+    <a href="https://disease.sh/">API (disease.sh)</a> <br />
     <a href="https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design">Flag Icons</a>
   </p>
   
@@ -64,15 +64,18 @@
 
 <details>
   
-  <summary><strong>Dependências</strong></summary>
+  <summary><strong>Stack</strong></summary>
   
   <br />
 
-  <pre>npm i styled-components</pre>
-  <pre>npm i @material-ui/core</pre>
-  <pre>npm i @material-ui/lab</pre>
-  <pre>npm i --save-dev customize-cra</pre>
-  <pre>npm i --save-dev react-app-rewired</pre>
+  <p align="left">
+    React 19 · Vite · Material UI (@mui/material) · styled-components · vite-plugin-pwa
+  </p>
+
+  <pre>npm install      # instala as dependências</pre>
+  <pre>npm run dev      # ambiente de desenvolvimento</pre>
+  <pre>npm run build    # build de produção (dist/)</pre>
+  <pre>npm run preview  # serve o build localmente</pre>
 
 </details>
 
