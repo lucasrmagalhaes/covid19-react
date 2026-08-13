@@ -1,51 +1,69 @@
-import React, { memo } from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Skeleton } from '../../../components'
+import { Grid, Skeleton } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 import Card from './Card'
+import { formatNumber, formatPercent } from '../../../commons/utils/number'
+import { useI18n } from '../../../commons/i18n'
 
 function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
-    
-    // Dados que a API retorna
-    const { cases, todayCases, active, deaths, todayDeaths, recovered, critical } = data 
+    const { t, intlLocale } = useI18n()
+    const theme = useTheme()
+    const palette = theme.vars?.palette ?? theme.palette
 
-/* 
- * Função para retornar o valor ou uma barra cinza.
- * Skeleton - Melhora a interface de loading.
+    // Dados que a API retorna
+    const { cases, casesPerOneMillion, active, deaths, recovered, critical } = data
+    const fatality = cases && deaths != null ? deaths / cases : undefined
+
+/*
+ * Formata o valor ou mostra uma barra cinza (Skeleton) enquanto carrega.
  */
-    const getValue = (value) => value != null ? value : <Skeleton variant="text" width={182} height={60} />
+    const getValue = (value, format = formatNumber) =>
+        value != null ? format(value, intlLocale) : <Skeleton variant="text" width={182} height={60} />
 
     return (
         <Grid container spacing={1}>
-            
-            <Grid size={{ xs: 12, md: 4 }}>
-                <Card value={getValue(cases)} label="CASOS" color="#000" />
-            </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
-                <Card value={getValue(todayCases)} label="HOJE" color="#000" />
+                <Card value={getValue(cases)} label={t('cases')} color={palette.text.primary} />
             </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
-                <Card value={getValue(active)} label="ATIVO" color="#000" />
+                <Card value={getValue(casesPerOneMillion)} label={t('casesPerMillion')} color={palette.text.primary} />
             </Grid>
-            
-            <Grid size={{ xs: 12, md: 6 }}>
-                <Card value={getValue(deaths)} label="ÓBITOS" color="#FF0000" />
+
+            <Grid size={{ xs: 12, md: 4 }}>
+                <Card value={getValue(active)} label={t('active')} color={palette.text.primary} />
             </Grid>
 
             <Grid size={{ xs: 12, md: 6 }}>
-                <Card value={getValue(todayDeaths)} label="HOJE" color="#FF0000" />
+                <Card value={getValue(deaths)} label={t('deaths')} color={palette.error.main} />
             </Grid>
 
             <Grid size={{ xs: 12, md: 6 }}>
-                <Card value={getValue(recovered)} label="RECUPERADOS" color="#008000" />
+                <Card value={getValue(fatality, formatPercent)} label={t('fatality')} color={palette.error.main} />
             </Grid>
 
             <Grid size={{ xs: 12, md: 6 }}>
-                <Card value={getValue(critical)} label="CRÍTICO" color="#FF7F00" />
+                <Card value={getValue(recovered)} label={t('recovered')} color={palette.success.main} />
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 6 }}>
+                <Card value={getValue(critical)} label={t('critical')} color={palette.warning.main} />
             </Grid>
         </Grid>
     )
+}
+
+Board.propTypes = {
+    data: PropTypes.shape({
+        cases: PropTypes.number,
+        casesPerOneMillion: PropTypes.number,
+        active: PropTypes.number,
+        deaths: PropTypes.number,
+        recovered: PropTypes.number,
+        critical: PropTypes.number,
+    }).isRequired,
 }
 
 export default memo(Board)

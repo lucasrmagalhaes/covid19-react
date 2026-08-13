@@ -1,6 +1,8 @@
 {
-  "short_name": "PWA",
-  "name": "Covid-19 PWA",
+  "short_name": "COVID-19",
+  "name": "COVID-19 — Painel histórico da pandemia",
+  "description": "Painel PWA com os dados históricos consolidados da COVID-19 por país.",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +10,32 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
-      "src": "logo512.png",
+      "src": "icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#10151c"
 }

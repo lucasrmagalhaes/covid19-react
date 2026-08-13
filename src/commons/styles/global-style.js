@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
-import CovidImg from '../../assets/images/covid19.jpg'
+import CovidImg from '../../assets/images/covid19.webp'
 
 const globalStyle = createGlobalStyle`
     * {
-        outline: none;
         box-sizing: border-box;
+    }
+
+    /* indicador de foco visível para navegação por teclado (WCAG 2.4.7) */
+    :focus-visible {
+        outline: 2px solid #5d78ff;
+        outline-offset: 2px;
     }
 
     body {
@@ -20,11 +25,17 @@ const globalStyle = createGlobalStyle`
     }
 
     #root {
-        background: url(${CovidImg});
+        background-color: #10151c; /* fallback enquanto a imagem carrega */
+        background-image: url(${CovidImg});
         height: 100%;
         width: 100%;
         background-size: cover;
         background-position: center center;
+    }
+
+    /* colorSchemeSelector 'data' do MUI estampa data-dark/data-light no <html> */
+    [data-dark] #root {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${CovidImg});
     }
 
     .mb-2 {

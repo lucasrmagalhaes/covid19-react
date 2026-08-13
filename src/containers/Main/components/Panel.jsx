@@ -1,78 +1,130 @@
-import React, { memo } from 'react'
-import RefreshIcon from '../../../assets/images/refresh.svg'
-import { Card, Typography, Button, Select, MenuItem } from '../../../components'
-import COUNTRIES from '../../../commons/constants/countries'
-import { CardPanelContentStyled, ItemStyled } from './style'
-
-const navigatorHasShare = navigator.share
+import { memo, useMemo } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Typography, Button, IconButton, Autocomplete, TextField, Tooltip } from '@mui/material'
+import { useColorScheme } from '@mui/material/styles'
+import { useI18n, regionName } from '../../../commons/i18n'
+import { formatNumber, formatPercent } from '../../../commons/utils/number'
+import WorldFlag from '../../../assets/images/world.png'
+import { CardPanelContentStyled, ItemStyled, ToolbarStyled } from './style'
 
 // Alguns valores e parametros que o arquivo main vai enviar.
-function Panel({ updateAt, onChange, data, country, getCovidData }) {
-    const { cases, recovered, deaths, todayCases, todayDeaths } = data
+function Panel({ data, dataUpTo, onChange, country, countries }) {
+    const { t, locale, intlLocale, toggleLocale } = useI18n()
+    const { mode, setMode } = useColorScheme()
+    const navigatorHasShare = typeof navigator !== 'undefined' && Boolean(navigator.share)
 
-    const renderCountries = (country, index) => (
-        <MenuItem key={`country-${index}`} value={country.value}>
-            <ItemStyled>
-                <div>{country.label}</div>
-                <img src={country.flag} alt={`País-${country.label}`} />
-            </ItemStyled>
-        </MenuItem>
-    )
+    const options = useMemo(() => [
+        { value: 'World', label: t('world'), flag: WorldFlag },
+        ...countries.map((item) => ({
+            value: item.country,
+            label: regionName(item.countryInfo?.iso2, locale) ?? item.country,
+            flag: item.countryInfo?.flag,
+        })),
+    ], [countries, locale, t])
 
-    const textCovid19 = `País: ${country}, Total de Casos: ${cases}, Óbitos de Hoje: ${todayDeaths}, 
-    Casos de Hoje: ${todayCases}, Total de Mortes: ${deaths}, Recuperados: ${recovered}.`
-    
+    // fallback sintético: mantém o input fiel ao país exibido enquanto a lista não chega
+    const selected = options.find((option) => option.value === country) ??
+        { value: country, label: country, flag: undefined }
+
+    const { cases, deaths } = data
+    const fatality = cases && deaths != null ? deaths / cases : undefined
+    const textCovid19 = `${t('title')} — ${selected.label} · ${t('cases')}: ${formatNumber(cases, intlLocale)} · ` +
+        `${t('deaths')}: ${formatNumber(deaths, intlLocale)} · ${t('fatality')}: ${formatPercent(fatality, intlLocale)}`
+
     // Documentações mais completas de JS é na Mozilla
     const copyInfo = () => {
         navigator.clipboard.writeText(textCovid19)
-    }   
+    }
 
-    /** 
+    /**
      * Navegadores que tiverem essa API/suporte
      * title, text e url - valores padrões da API
      */
     const shareInfo = () => {
         navigator.share({
-            title: `Dados do Covid-19 - ${country}`,
+            title: `COVID-19 - ${selected.label}`,
             text: textCovid19,
             url: 'https://covid19-pwa.netlify.app/' // Onde a aplicação está hospedada.
         })
     }
 
-    // Adicionando os métodos. Celular compartilha por Whatsapp e Web permite copiar.
-    const renderShareButton = (
-        <div>
-            <Button variant="contained" color="primary" onClick={shareInfo}>
-                Compartilhar
-            </Button>
-        </div>
-    )
-    
-    const renderCopyButton = (
-        <div>
-        <Button variant="contained" color="primary" onClick={copyInfo}>
-            Copiar
-        </Button>
-    </div>
-    )
+    const dataUpToLabel = dataUpTo
+        ? new Date(dataUpTo).toLocaleDateString(intlLocale, { day: '2-digit', month: 'short', year: 'numeric' })
+        : '…'
 
     return (
         <Card>
             <CardPanelContentStyled>
                 <div>
-                    <Typography variant="h5" component="span" color="primary">Coronavírus (COVID-19) </Typography>
-                    <Typography variant="h6" component="span" color="primary">Visão Geral </Typography>
-                    <Typography variant="body2" component="span" color="primary">Atualizado em: {updateAt}</Typography>
+                    <Typography variant="h5" component="h1" color="primary">{t('title')} </Typography>
+                    <Typography variant="h6" component="h2" color="primary">{t('overview')} </Typography>
+                    <Typography variant="body2" component="p" color="primary">
+                        {t('dataUpTo')}: {dataUpToLabel} · {t('historicalNote')}
+                    </Typography>
                     <div className="pt-2">
-                        <Select onChange={onChange} value={country} variant="standard">
-                            {COUNTRIES.map(renderCountries)}
-                        </Select>
+                        <Autocomplete
+                            options={options}
+                            value={selected}
+                            onChange={(_, option) => option && onChange(option.value)}
+                            getOptionLabel={(option) => option.label}
+                            isOptionEqualToValue={(option, value) => option.value === value.value}
+                            disableClearable
+                            autoHighlight
+                            sx={{ minWidth: 240, maxWidth: 320 }}
+                            renderOption={({ key, ...props }, option) => (
+                                <li key={key} {...props}>
+                                    <ItemStyled>
+                                        <div>{option.label}</div>
+                                        {/* alt vazio: o nome do país já está no texto ao lado */}
+                                        <img src={option.flag} alt="" width="28" loading="lazy" />
+                                    </ItemStyled>
+                                </li>
+                            )}
+                            renderInput={(params) => (
+                                <TextField {...params} variant="standard" label={t('selectCountry')} />
+                            )}
+                        />
                     </div>
                 </div>
-                {navigatorHasShare ? renderShareButton : renderCopyButton}
+                <ToolbarStyled>
+                    <div>
+                        <Tooltip title={t('darkMode')}>
+                            <IconButton
+                                aria-label={t('darkMode')}
+                                onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
+                            >
+                                {mode === 'dark' ? '☀️' : '🌙'}
+                            </IconButton>
+                        </Tooltip>
+                        <Button size="small" aria-label={t('language')} onClick={toggleLocale}>
+                            {locale === 'pt' ? 'EN' : 'PT'}
+                        </Button>
+                    </div>
+                    {/* Celular compartilha nativo e Web permite copiar. */}
+                    {navigatorHasShare ? (
+                        <Button variant="contained" color="primary" onClick={shareInfo} disabled={cases == null}>
+                            {t('share')}
+                        </Button>
+                    ) : (
+                        <Button variant="contained" color="primary" onClick={copyInfo} disabled={cases == null}>
+                            {t('copy')}
+                        </Button>
+                    )}
+                </ToolbarStyled>
             </CardPanelContentStyled>
         </Card>
     )
+}
+
+Panel.propTypes = {
+    data: PropTypes.shape({
+        cases: PropTypes.number,
+        deaths: PropTypes.number,
+    }).isRequired,
+    dataUpTo: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    country: PropTypes.string.isRequired,
+    countries: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default memo(Panel)
