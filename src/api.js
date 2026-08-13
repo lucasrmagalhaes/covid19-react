@@ -1,4 +1,4 @@
-const path = 'https://coronavirus-19-api.herokuapp.com/countries' // API
+const path = 'https://disease.sh/v3/covid-19' // API
 
 const headers = {
     method: 'get',
@@ -7,7 +7,9 @@ const headers = {
 }
 
 function getCountry(country) {
-    return fetch(`${path}/${country}`, headers) // fetch é mais simples mas não é recomendado por questão de segurança
+    // 'World' não existe no endpoint de países; o total global fica em /all (mesmo formato)
+    const url = country === 'World' ? `${path}/all` : `${path}/countries/${country}`
+    return fetch(url, headers) // fetch é mais simples mas não é recomendado por questão de segurança
         .then((response) => response.json()) // retorna o dado/país
 }
 

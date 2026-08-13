@@ -12,7 +12,7 @@ function Board({ data }) { // Cards sobre o Covid-19 irão ficar aqui
  * Função para retornar o valor ou uma barra cinza.
  * Skeleton - Melhora a interface de loading.
  */
-    const getValue = (value) => value ? value : <Skeleton variant="text" width={182} height={60} />
+    const getValue = (value) => value != null ? value : <Skeleton variant="text" width={182} height={60} />
 
     return (
         <Grid container spacing={1}>
