@@ -1,97 +1,55 @@
-<h1 align="center">COVID-19 :bar_chart:</h1>
+<h1 align="center">COVID-19 📊</h1>
 
 <p align="center">
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/issues?q=is%3Aopen+is%3Aissue">
-    <img src="https://img.shields.io/github/issues-raw/lucasrmagalhaes/covid19-react?style=plastic" title="Open Issues" /> 
-  </a>
-  
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/issues?q=is%3Aissue+is%3Aclosed">
-    <img src="https://img.shields.io/github/issues-closed-raw/lucasrmagalhaes/covid19-react?style=plastic" title="Closed Issues" /> 
-  </a>
-    
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/stargazers">
-    <img src="https://img.shields.io/github/stars/lucasrmagalhaes/covid19-react?style=plastic" title="Stars" /> 
-  </a>
-    
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/lucasrmagalhaes/covid19-react?style=plastic" title="License" /> 
-  </a>
- 
-  <a href="#">
-    <img src="https://img.shields.io/github/languages/count/lucasrmagalhaes/covid19-react?style=plastic" title="Language Count" />
-  </a>
-  
-  <a href="#">
-    <img src="https://img.shields.io/github/languages/top/lucasrmagalhaes/covid19-react?style=plastic" title="Top Language" />
-  </a>
-  
-  <a href="#">
-    <img src="https://img.shields.io/github/languages/code-size/lucasrmagalhaes/covid19-react?style=plastic" title="Code Size in Bytes" />
-  </a>
-    
-  <a href="https://github.com/lucasrmagalhaes/covid19-react/commits/main">
-    <img src="https://img.shields.io/github/last-commit/lucasrmagalhaes/covid19-react?style=plastic" title="Last Commit" />
-  </a>
+  <i>Progressive Web App em React com o panorama histórico da COVID-19 por país.</i>
+</p>
+
+<p align="center">
+  <a href="https://covid19-pwa.netlify.app/"><img src="https://img.shields.io/badge/demo-online-2ea44f?style=flat-square&logo=netlify&logoColor=white" alt="Demo online" /></a>
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/blob/main/LICENSE"><img src="https://img.shields.io/github/license/lucasrmagalhaes/covid19-react?style=flat-square" alt="Licença" /></a>
+  <a href="https://github.com/lucasrmagalhaes/covid19-react/commits/main"><img src="https://img.shields.io/github/last-commit/lucasrmagalhaes/covid19-react?style=flat-square" alt="Último commit" /></a>
 </p>
 
 <p align="center">
   <a href="https://covid19-pwa.netlify.app/">
-    <img
-      src="https://github.com/lucasrmagalhaes/covid19-react/blob/main/public/dio.gif?raw=true"
-      alt="COVID-19 PWA" 
-    />
+    <img src="public/dio.gif" alt="Demonstração do aplicativo" />
   </a>
-  <br />
-  <i>Progressive Web Application com React para mapear os dados do COVID-19 pelo mundo.</i>
 </p>
 
-<hr />
+<p align="center">
+  <strong>🔗 <a href="https://covid19-pwa.netlify.app/">covid19-pwa.netlify.app</a></strong>
+</p>
 
-<details>
-  <summary><strong>Fontes</strong></summary>
-  
-  <br />
-  
-  <p align="left">
-    <a href="https://github.com/Tautorn/covid19-pwa">Projeto Original</a> <br />
-    <a href="https://disease.sh/">API (disease.sh)</a> <br />
-    <a href="https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design">Flag Icons</a>
-  </p>
-  
-</details>
+## Sobre
 
-<hr />
+Dashboard que mostra casos, óbitos, recuperados, ativos e críticos da COVID-19 para 14 países e o total mundial, consumindo a API pública [disease.sh](https://disease.sh/). Como a coleta global de dados foi encerrada em 2023, os números representam o retrato histórico consolidado da pandemia.
 
-<details>
-  
-  <summary><strong>Stack</strong></summary>
-  
-  <br />
+- 📱 **PWA**: instalável e funciona offline
+- 🌎 **14 países + mundo**, com seletor de bandeiras
+- 📤 **Compartilhamento nativo** (Web Share API) no celular, cópia para a área de transferência no desktop
+- 🌙 Interface em português, responsiva de mobile a desktop
 
-  <p align="left">
-    React 19 · Vite · Material UI (@mui/material) · styled-components · vite-plugin-pwa
-  </p>
+## Stack
 
-  <pre>npm install      # instala as dependências</pre>
-  <pre>npm run dev      # ambiente de desenvolvimento</pre>
-  <pre>npm run build    # build de produção (dist/)</pre>
-  <pre>npm run preview  # serve o build localmente</pre>
+React 19 · Vite · Material UI (@mui/material) · styled-components · vite-plugin-pwa
 
-</details>
+> Migrado em 2026 do create-react-app / React 16 / Material-UI v4 para a stack atual — detalhes no histórico de commits.
 
-<hr />
+## Como rodar
 
-<details>
-  
-  <summary><strong>Anotações</strong></summary>
-  
-  <br />
-  
-  <p align="left">
-    Skeleton - Melhora a interface de loading. <br />
-    useState - Manipula variáveis. <br />
-  </p>
-  
-</details>
+```bash
+npm install      # instala as dependências
+npm run dev      # ambiente de desenvolvimento
+npm run build    # build de produção (dist/)
+npm run preview  # serve o build localmente
+```
 
-<hr />
+## Créditos
+
+- [Projeto original](https://github.com/Tautorn/covid19-pwa) de Tautorn
+- [disease.sh](https://disease.sh/) — Open Disease Data API
+- [Flag Icons](https://www.softicons.com/web-icons/flag-icons-by-custom-icon-design) por Custom Icon Design
+
+## Licença
+
+Distribuído sob a licença MIT — veja [LICENSE](LICENSE).
