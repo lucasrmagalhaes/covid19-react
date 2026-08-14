@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="https://covid19-pwa.netlify.app/">
-    <img src="public/dio.gif" alt="Demonstração do aplicativo" />
+    <img src=".github/dio.gif" alt="Demonstração do aplicativo" />
   </a>
 </p>
 
